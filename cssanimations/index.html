@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Eater" rel="stylesheet">	
+<style>
+	
+	label{
+		text-align: center;
+		color:red;
+	}
+	
+	#demo{
+		background-image: none;
+		color:red;
+		font-size:30px;
+	}
+.header{
+		
+		font-weight: 600;
+		font-size:70px;
+		color:white;
+	   
+	    
+}	
+	article{
+		color:white;
+	}	
+	
+p{
+background-image: url("skull.png");
+background-repeat: no-repeat;	
+font-family: 'Eater', cursive;
+font-size: 38px;
+color:red;
+padding: 30px;
+	
+	}	
+	
+.droptarget {
+    float: left; 
+    width: 105px; 
+    height: 105px;
+    margin: 15px;
+    padding: 1px;
+	text-align: center;
+	background-image: url("halloween3.png");
+}
+	
+	
+body{
+background-image: url("halloween2.jpg");
+background-size: cover;	
+background-repeat: no-repeat;
+background-color: black;
+font-family: 'Eater', cursive;
+font-size: 18px;
+color:black;
+font-weight: 600;
+padding: 5px;
+text-align: center;	
+
+	}
+</style>
+</head>
+<body>
+<h1 class="header">CRAZY GRAVES GAME<br></h1>
+<article><h2>A GAME USING JAVASCRIPT, HTML5 AND CSS3 WITH ANIMATIONS</h2><BR><h2></h2><label><h3>Drag the p element back and forth between the two rectangles:</h3></label><p id="demo" class="none"></p></article>
+
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">1</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">2</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">3</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">4</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">5</p>
+</div>
+	
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	
+	
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">1</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">2</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">3</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">4</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	
+	
+ 
+	
+	
+
+
+
+
+
+
+
+<script>
+function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+    document.getElementById("demo").innerHTML = "The p element is being dragged";
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "The p element was dropped";
+}
+</script>
+
+</body>
+</html>
